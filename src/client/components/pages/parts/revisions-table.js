@@ -65,8 +65,7 @@ function RevisionsTable(props) {
 						<tbody>
 							{
 								results.map((revision) => (
-									<tr key={revision.revisionId}>
-										<td>
+									<tr className="hover-color" key={revision.revisionId}>										<td>
 											<a
 												href={`/revision/${revision.revisionId}`}
 												title={`${revision.isMerge ? 'Merge revision' : 'Revision'} ${revision.revisionId}`}

@@ -27,8 +27,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
 import RevisionsTable from './parts/revisions-table';
-import {faXTwitter} from '@fortawesome/free-brands-svg-icons';
-
+import {faTwitter} from '@fortawesome/free-brands-svg-icons';
 
 const {Alert, Button, Col, Container, Row} = bootstrap;
 
@@ -66,7 +65,7 @@ class IndexPage extends React.Component {
 										<input
 											required
 											autoFocus="autofocus"
-											className="form-control"
+											className={`form-control ${this.props.darkMode ? 'dark-mode' : ''}`}
 											name="q"
 											placeholder="Search for..."
 											type="text"
@@ -153,10 +152,10 @@ class IndexPage extends React.Component {
 											<a className="contact-text" href="https://x.com/BookBrainz">
 												<FontAwesomeIcon
 													className="contact-text"
-													icon={faXTwitter}
+													icon={faTwitter}
 													size="2x"
 												/>
-												X
+												Twitter
 											</a>
 											<FontAwesomeIcon
 												className="margin-sides-1 contact-text"
@@ -190,7 +189,7 @@ class IndexPage extends React.Component {
 			<Container>
 				<Row>
 					<Col lg={{offset: 2, span: 8}}>
-						<h1 className="text-center">The Open Book Database</h1>
+						<h1 className="text-center" font-weight-bold>The Open Book Database</h1>
 						<p className="lead text-justify">
 							BookBrainz is a project to create an online database
 							of information about every single book, magazine,
@@ -264,7 +263,7 @@ class IndexPage extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className={this.props.darkMode ? 'dark-mode' : ''}>				
 				{this.renderHeader()}
 				{this.renderContent()}
 			</div>
@@ -274,6 +273,7 @@ class IndexPage extends React.Component {
 
 IndexPage.displayName = 'IndexPage';
 IndexPage.propTypes = {
+	darkMode: PropTypes.bool.isRequired,
 	disableSignUp: PropTypes.bool,
 	isLoggedIn: PropTypes.bool.isRequired,
 	recent: PropTypes.array.isRequired,

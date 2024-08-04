@@ -31,10 +31,10 @@ $disabled-color: lighten($disabled-bg,15%);
 @import "./external-services.scss";
 
 .navbar.BookBrainz {
-	background: rgba(255, 255, 255, 1);
 	margin-bottom: 0px;
 	padding-right: 0px;
 	.navbar-nav {
+		background: rgba(255, 255, 255, 1);
 		// The following prevents menu items from wrapping to two lines (icon on top text on the bottom)
 		// in browsers sizes between collapsed menu and enough horizontal space for all menu items
 		white-space: nowrap;
@@ -43,10 +43,10 @@ $disabled-color: lighten($disabled-bg,15%);
 			color: $disabled-color;
 			background: $disabled-bg;
 		}
-		.dropdown-menu a.dropdown-item:hover:visited {
-			color: #fff !important;
-		}
+		color: #fff !important;
 	}
+}
+.dropdown-menu a.dropdown-item:hover:visited {
 }
 
 .navbar-collapse {
@@ -887,4 +887,13 @@ div[class~=collapsing]+div[class=card-header] .accordion-arrow {
     position: relative;
     bottom: 0.3em;
 	left: -0.5em;
+}
+.hover-color :hover {
+	color: #963873;
+}
+.dark-mode{
+   background-color: rgb(13,17,23) !important;
+}
+.footer .text-right .small + .small {
+   margin-top: 7px;
 }
